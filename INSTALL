@@ -1,0 +1,9 @@
+Building Fury
+
+See doc/readme-qt.rst for instructions on building Fury QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Fury.
+
+See doc/build-*.txt for instructions on building Furyd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Fury.
