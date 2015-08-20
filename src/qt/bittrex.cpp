@@ -1,4 +1,4 @@
-#include "ui_radio.h"
+#include "ui_bittrex.h"
 #include "guiutil.h"
 #include "bitcoingui.h"
 #include "util.h"
@@ -7,21 +7,21 @@
 #include <QtGui>
 #include <QtWebKit>
 
-Radio::Radio(QWidget *parent) :
+Bittrex::Bittrex(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Radio),
+    ui(new Ui::Bittrex),
     model(0)
 {
     ui->setupUi(this);
 }
-    void Radio::setModel(WalletModel *model)
+    void Bittrex::setModel(WalletModel *model)
 {
     this->model = model;
     if(!model)
         return;
 }
 
-Radio::~Radio()
+Bittrex::~Bittrex()
 {
     delete ui;
 }

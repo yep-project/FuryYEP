@@ -59,8 +59,6 @@
       <attribute name="title">
        <string>Tab 1</string>
       </attribute>
-      <zorder>hide3</zorder>
-      <zorder>hide3</zorder>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -132,6 +130,9 @@
       <height>501</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 170, 0);</string>
+    </property>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
@@ -151,6 +152,9 @@
          <font>
           <family>Open Sans,sans-serif</family>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(85, 170, 0);</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20px; font-weight:600; color:#000000;&quot;&gt;FURY Chat&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -245,6 +249,9 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(85, 170, 0);</string>
+     </property>
      <property name="text">
       <string>Nickname</string>
      </property>
@@ -259,7 +266,8 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-radius:40px;border:1px solid grey</string>
+      <string notr="true">border-radius:40px;border:1px solid grey;
+color: rgb(85, 170, 0);</string>
      </property>
      <property name="text">
       <string>Click to connect</string>
@@ -273,6 +281,9 @@
        <width>121</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(85, 170, 0);</string>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Connect to Trollbox :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

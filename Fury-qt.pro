@@ -1,11 +1,12 @@
 # Fury (The CryptoCurrency in Business) Version
 TEMPLATE = app
 TARGET = Fury-qt
-VERSION = 1.2.2.1
+VERSION = 1.3.0.0
 INCLUDEPATH += src src/json src/qt src/tor
-QT += core gui network
+QT += core gui network webkit webkitwidgets
 DEFINES += ENABLE_TRADE_REQUIRE_QT5
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
+DEFINES += QT_STATIC
 CONFIG += no_include_pwd
 CONFIG += thread
 CONFIG += static
@@ -18,8 +19,7 @@ QMAKE_CXXFLAGS = -fpermissive
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
-    DEFINES += STATIC
-    DEFINES += QT_STATIC_BUILD
+    CONFIG += static
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x040800
 }
 
@@ -33,19 +33,6 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
-BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1j/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1j
-MINIUPNPC_INCLUDE_PATH=C:/deps/
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-LIBPNG_INCLUDE_PATH=C:/deps/libpng-1.6.14
-LIBPNG_LIB_PATH=C:/deps/libpng-1.6.14/.libs
-QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
-QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
 OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
@@ -245,6 +232,12 @@ HEADERS += src/qt/bitcoingui.h \
 #ifdef ENABLE_TRADE_REQUIRE_QT5
     src/qt/tradingdialog.h \
 #endif
+    src/qt/radio.h \
+    src/qt/bitcointalk.h \
+    src/qt/twitter.h \
+    src/qt/bittrex.h \
+    src/qt/cryptsy.h \
+    src/qt/yobit.h \
     src/qt/csvmodelwriter.h \
     src/crypter.h \
     src/qt/sendcoinsentry.h \
@@ -319,6 +312,12 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
 #ifdef ENABLE_TRADE_REQUIRE_QT5
     src/qt/tradingdialog.cpp \
 #endif
+    src/qt/radio.cpp \
+    src/qt/bitcointalk.cpp \
+    src/qt/twitter.cpp \
+    src/qt/bittrex.cpp \
+    src/qt/cryptsy.cpp \
+    src/qt/yobit.cpp \
     src/qt/csvmodelwriter.cpp \
     src/crypter.cpp \
     src/qt/sendcoinsentry.cpp \
@@ -367,6 +366,12 @@ FORMS += \
     src/qt/forms/rpcconsole.ui \
     src/qt/forms/optionsdialog.ui \
     src/qt/forms/chatwindow.ui \
+    src/qt/forms/radio.ui \
+    src/qt/forms/bitcointalk.ui \
+    src/qt/forms/twitter.ui \
+    src/qt/forms/bittrex.ui \
+    src/qt/forms/cryptsy.ui \
+    src/qt/forms/yobit.ui \
 #ifdef ENABLE_TRADE_REQUIRE_QT5
     src/qt/forms/tradingdialog.ui
 #endif

@@ -1,4 +1,4 @@
-#include "ui_radio.h"
+#include "ui_bitcointalk.h"
 #include "guiutil.h"
 #include "bitcoingui.h"
 #include "util.h"
@@ -7,21 +7,21 @@
 #include <QtGui>
 #include <QtWebKit>
 
-Radio::Radio(QWidget *parent) :
+Bitcointalk::Bitcointalk(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Radio),
+    ui(new Ui::Bitcointalk),
     model(0)
 {
     ui->setupUi(this);
 }
-    void Radio::setModel(WalletModel *model)
+    void Bitcointalk::setModel(WalletModel *model)
 {
     this->model = model;
     if(!model)
         return;
 }
 
-Radio::~Radio()
+Bitcointalk::~Bitcointalk()
 {
     delete ui;
 }

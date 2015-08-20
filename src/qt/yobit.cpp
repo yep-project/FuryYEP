@@ -1,4 +1,4 @@
-#include "ui_radio.h"
+#include "ui_yobit.h"
 #include "guiutil.h"
 #include "bitcoingui.h"
 #include "util.h"
@@ -7,21 +7,21 @@
 #include <QtGui>
 #include <QtWebKit>
 
-Radio::Radio(QWidget *parent) :
+Yobit::Yobit(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Radio),
+    ui(new Ui::Yobit),
     model(0)
 {
     ui->setupUi(this);
 }
-    void Radio::setModel(WalletModel *model)
+    void Yobit::setModel(WalletModel *model)
 {
     this->model = model;
     if(!model)
         return;
 }
 
-Radio::~Radio()
+Yobit::~Yobit()
 {
     delete ui;
 }

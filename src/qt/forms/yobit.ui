@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Radio</class>
- <widget class="QWidget" name="Radio">
+ <class>Yobit</class>
+ <widget class="QWidget" name="Yobit">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1066</width>
+    <width>1072</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,17 +14,17 @@
    <string>Form</string>
   </property>
   <widget class="QWebView" name="webView">
-   <property name="geometry">
+    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1066</width>
+     <width>1072</width>
      <height>600</height>
     </rect>
    </property>
    <property name="url">
     <url>
-     <string>http://tunein.com/radio/100hitz---Urban-Hitz-s111383</string>
+     <string>https://yobit.net</string>
     </url>
    </property>
   </widget>
@@ -38,4 +38,4 @@
  </customwidgets>
  <resources/>
  <connections/>
-</ui>
+</ui> 

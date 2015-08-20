@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Radio</class>
- <widget class="QWidget" name="Radio">
+ <class>Cryptsy</class>
+ <widget class="QWidget" name="Cryptsy">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <widget class="QWebView" name="webView">
-   <property name="geometry">
+    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
@@ -24,7 +24,7 @@
    </property>
    <property name="url">
     <url>
-     <string>http://tunein.com/radio/100hitz---Urban-Hitz-s111383</string>
+     <string>https://www.cryptsy.com</string>
     </url>
    </property>
   </widget>
@@ -38,4 +38,4 @@
  </customwidgets>
  <resources/>
  <connections/>
-</ui>
+</ui> 

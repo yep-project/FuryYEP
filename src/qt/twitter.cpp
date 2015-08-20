@@ -1,4 +1,4 @@
-#include "ui_radio.h"
+#include "ui_twitter.h"
 #include "guiutil.h"
 #include "bitcoingui.h"
 #include "util.h"
@@ -7,21 +7,21 @@
 #include <QtGui>
 #include <QtWebKit>
 
-Radio::Radio(QWidget *parent) :
+Twitter::Twitter(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Radio),
+    ui(new Ui::Twitter),
     model(0)
 {
     ui->setupUi(this);
 }
-    void Radio::setModel(WalletModel *model)
+    void Twitter::setModel(WalletModel *model)
 {
     this->model = model;
     if(!model)
         return;
 }
 
-Radio::~Radio()
+Twitter::~Twitter()
 {
     delete ui;
 }

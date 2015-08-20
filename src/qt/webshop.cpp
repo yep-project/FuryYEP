@@ -1,4 +1,4 @@
-#include "ui_radio.h"
+#include "ui_webshop.h"
 #include "guiutil.h"
 #include "bitcoingui.h"
 #include "util.h"
@@ -7,21 +7,21 @@
 #include <QtGui>
 #include <QtWebKit>
 
-Radio::Radio(QWidget *parent) :
+Webshop::Webshop(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Radio),
+    ui(new Ui::Webshop),
     model(0)
 {
     ui->setupUi(this);
 }
-    void Radio::setModel(WalletModel *model)
+    void Webshop::setModel(WalletModel *model)
 {
     this->model = model;
     if(!model)
         return;
 }
 
-Radio::~Radio()
+Webshop::~Webshop()
 {
     delete ui;
 }
