@@ -20,9 +20,6 @@
 #include "statisticspage.h"
 #include "blockbrowser.h"
 #include "chatwindow.h"
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-#include "tradingdialog.h"
-#endif
 #include "radio.h"
 #include "bitcointalk.h"
 #include "twitter.h"
@@ -120,10 +117,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     statisticsPage = new StatisticsPage(this);
     blockBrowser = new BlockBrowser(this);
     chatWindow = new ChatWindow(this);
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    tradingDialogPage = new tradingDialog(this);
-    tradingDialogPage->setObjectName("tradingDialog");
-#endif
     radioPage = new Radio(this);
     bitcointalkPage = new Bitcointalk(this);
     twitterPage = new Twitter(this);
@@ -147,9 +140,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     centralWidget->addWidget(statisticsPage);
     centralWidget->addWidget(blockBrowser);
     centralWidget->addWidget(chatWindow);
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    centralWidget->addWidget(tradingDialogPage);
-#endif
     centralWidget->addWidget(radioPage);
     centralWidget->addWidget(bitcointalkPage);
     centralWidget->addWidget(twitterPage);
@@ -203,10 +193,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), this, SLOT(gotoHistoryPage()));
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
 
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    connect(TradingAction, SIGNAL(triggered()), tradingDialogPage, SLOT(InitTrading()));
-#endif
-
     // Double-clicking on a transaction on the transaction history page shows details
     connect(transactionView, SIGNAL(doubleClicked(QModelIndex)), transactionView, SLOT(showDetails()));
 
@@ -255,15 +241,6 @@ void BitcoinGUI::createActions()
     chatAction->setToolTip(tr("View chat"));
     chatAction->setCheckable(true);
     tabGroup->addAction(chatAction);
-
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    TradingAction = new QAction(tr("&Trade"), this);
-    TradingAction ->setToolTip(tr("Start Trading"));
-    TradingAction ->setCheckable(true);
-    TradingAction ->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
-    TradingAction->setProperty("objectName","TradingAction");
-    tabGroup->addAction(TradingAction);
-#endif
 
     radioAction = new QAction(QIcon(":/icons/fury"), tr("&Radio"), this);
     radioAction->setToolTip(tr("Hip Hop"));
@@ -336,9 +313,6 @@ void BitcoinGUI::createActions()
     connect(statisticsAction, SIGNAL(triggered()), this, SLOT(gotoStatisticsPage()));
     connect(blockAction, SIGNAL(triggered()), this, SLOT(gotoBlockBrowser()));
     connect(chatAction, SIGNAL(triggered()), this, SLOT(gotoChatPage()));
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    connect(TradingAction, SIGNAL(triggered()), this, SLOT(gotoTradingPage()));
-#endif
     connect(radioAction, SIGNAL(triggered()), this, SLOT(gotoRadioPage()));
     connect(radioAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(bitcointalkAction, SIGNAL(triggered()), this, SLOT(gotoBitcointalkPage()));
@@ -494,9 +468,6 @@ void BitcoinGUI::createToolBars()
     //toolbar->addAction(statisticsAction);
     //toolbar->addAction(blockAction);
     //toolbar->addAction(chatAction);
-//#ifdef ENABLE_TRADE_REQUIRE_QT5
-//    toolbar->addAction(TradingAction);
-//#endif
 //    toolbar->addAction(radioAction);
 //    toolbar->addAction(bitcointalkAction);
 //    toolbar->addAction(twitterAction);
@@ -897,18 +868,6 @@ void BitcoinGUI::gotoChatPage()
     exportAction->setEnabled(false);
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
-
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-void BitcoinGUI::gotoTradingPage()
-{
-
-     TradingAction->setChecked(true);
-     centralWidget->setCurrentWidget(tradingDialogPage);
-
-  //  exportAction->setEnabled(false);
-  //  disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-}
-#endif
 
 void BitcoinGUI::gotoRadioPage()
 {

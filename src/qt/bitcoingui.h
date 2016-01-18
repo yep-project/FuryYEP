@@ -25,9 +25,6 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-class tradingDialog;
-#endif
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -77,9 +74,6 @@ private:
     StatisticsPage *statisticsPage;
     BlockBrowser *blockBrowser;
     ChatWindow *chatWindow;
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    tradingDialog *tradingDialogPage;
-#endif
     Radio *radioPage;
     Bitcointalk *bitcointalkPage;
     Twitter *twitterPage;
@@ -104,9 +98,6 @@ private:
     QAction *statisticsAction;
     QAction *blockAction;
     QAction *chatAction;
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    QAction *TradingAction;
-#endif
     QAction *radioAction;
     QAction *bitcointalkAction;
     QAction *twitterAction;
@@ -184,10 +175,6 @@ private slots:
     void gotoBlockBrowser();
     /** Switch to chat page*/
     void gotoChatPage();
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    /** Switch to trading page */
-    void gotoTradingPage();
-#endif
     /** Switch to radio page */
     void gotoRadioPage();
     /** Switch to bitcointalk page */

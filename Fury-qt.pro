@@ -229,9 +229,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/blockbrowser.h \
     src/qt/serveur.h \
     src/qt/chatwindow.h \
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    src/qt/tradingdialog.h \
-#endif
     src/qt/radio.h \
     src/qt/bitcointalk.h \
     src/qt/twitter.h \
@@ -309,9 +306,6 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/blockbrowser.cpp \
     src/qt/serveur.cpp \
     src/qt/chatwindow.cpp \
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    src/qt/tradingdialog.cpp \
-#endif
     src/qt/radio.cpp \
     src/qt/bitcointalk.cpp \
     src/qt/twitter.cpp \
@@ -371,10 +365,7 @@ FORMS += \
     src/qt/forms/twitter.ui \
     src/qt/forms/bittrex.ui \
     src/qt/forms/cryptsy.ui \
-    src/qt/forms/yobit.ui \
-#ifdef ENABLE_TRADE_REQUIRE_QT5
-    src/qt/forms/tradingdialog.ui
-#endif
+    src/qt/forms/yobit.ui
     
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
